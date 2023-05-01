@@ -7,7 +7,9 @@ Debouncing is a technique used to limit a function from getting called too frequ
 1. To create a debouncer, let’s create a new class:
 ```
 import 'dart:async';
-import 'package:flutter/material.dart';class Debouncer {
+import 'package:flutter/material.dart';
+
+class Debouncer {
    Debouncer({required this.milliseconds});   final int milliseconds;
    Timer? _timer;   void run(VoidCallback action) {
       if (_timer?.isActive ?? false) {
@@ -19,7 +21,8 @@ import 'package:flutter/material.dart';class Debouncer {
 ```
 2. After creating it, now we can use it in our widgets:
 ```
-final debouncer = Debouncer(milliseconds: 500);debouncer.run(() {
+final debouncer = Debouncer(milliseconds: 500);
+debouncer.run(() {
    // put the code that you want to debounce
    // example: calling an API, adding a BLoC event
 });
